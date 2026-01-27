@@ -24,17 +24,17 @@ const About = () => {
     }, [])
 
     return (
-        <section id="about" className="py-32 relative" ref={aboutRef}>
+        <section id="about" className="py-20 md:py-32 relative" ref={aboutRef}>
             <div className="container max-w-[1400px] mx-auto px-8">
-                <div className="text-center mb-24 reveal">
-                    <h2 className="text-4xl md:text-5xl lg:text-6xl mb-8 text-white">About</h2>
+                <div className="text-center mb-4 md:mb-24">
+                    <h2 className="text-4xl md:text-5xl lg:text-6xl mb-4 md:mb-8 text-white">About</h2>
                     <p className="text-base md:text-lg text-white">
                         The artist behind the lens
                     </p>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-center">
-                    <div className="reveal max-w-[600px]">
-                        <h3 className="text-2xl md:text-3xl lg:text-4xl mb-4">
+                    <div className="max-w-[600px]">
+                        <h3 className="text-2xl text-white md:text-3xl lg:text-4xl mb-4">
                             Crafting Stories Through Shadow & Light
                         </h3>
                         <p className="text-base md:text-lg text-slate-400 font-light leading-relaxed mb-4">

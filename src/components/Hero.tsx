@@ -29,7 +29,7 @@ const Hero = () => {
     return (
         <section
             id="home"
-            className="min-h-screen flex items-center justify-center relative overflow-hidden bg-black"
+            className="min-h-screen pt-[100px] md:mt-[10px] flex items-center justify-center relative overflow-hidden bg-black"
             ref={heroRef}
         >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-center max-w-[1400px] mx-auto px-8">
@@ -50,7 +50,7 @@ const Hero = () => {
                     </p>
                     <a
                         href="#portfolio"
-                        className="inline-block mt-8 px-10 py-4 bg-transparent text-white border border-white font-body text-sm font-normal tracking-[0.1em] uppercase cursor-pointer relative overflow-hidden transition-all duration-normal hover:text-black before:content-[''] before:absolute before:top-0 before:left-[-100%] before:w-full before:h-full before:bg-white before:transition-all before:duration-normal before:z-[-1] hover:before:left-0"
+                        className="inline-block mt-8 px-10 py-4 bg-transparent text-white border border-white font-body text-sm font-normal tracking-widest uppercase cursor-pointer relative overflow-hidden transition-all duration-normal hover:text-black before:content-[''] before:absolute before:top-0 before:-left-full before:w-full before:h-full before:bg-white before:transition-all before:duration-normal before:z-[-1] hover:before:left-0"
                         onClick={(e) => {
                             e.preventDefault()
                             document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' })

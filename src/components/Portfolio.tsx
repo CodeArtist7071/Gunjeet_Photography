@@ -52,16 +52,16 @@ const Portfolio = () => {
     }, [])
 
     return (
-        <section id="portfolio" className="py-32 relative">
+        <section id="portfolio" className="py-20 md:py-30 relative">
             <div className="container max-w-[1400px] mx-auto px-8">
-                <div className="text-center mb-24 opacity-55 translate-y-8 animate-fade-in-up">
+                <div className="text-center mb-12 md:mb-24 opacity-55 translate-y-8 animate-fade-in-up">
                     <h2 className="text-4xl md:text-5xl lg:text-6xl mb-8 text-white">Portfolio</h2>
                     <p className="text-base md:text-lg text-white">
                         A curated selection of my recent work
                     </p>
                 </div>
                 <div
-                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-24"
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 md:mt-24"
                     ref={portfolioRef}
                 >
                     {portfolioItems.map((item, index) => (

@@ -27,9 +27,9 @@ const Contact = () => {
     }, [])
 
     return (
-        <section id="contact" className="py-32 relative">
+        <section id="contact" className="py-20 md:py-32 relative">
             <div className="container max-w-[1400px] mx-auto px-8">
-                <div className="text-center mb-24 reveal">
+                <div className="text-center mb-6 md:mb-24">
                     <h2 className="text-4xl text-white md:text-5xl lg:text-6xl mb-8">Get in Touch</h2>
                     <p className="text-base md:text-lg text-white">
                         Let's create something extraordinary together
@@ -41,24 +41,31 @@ const Contact = () => {
                         Whether you're looking for editorial photography, portrait sessions,
                         or custom artwork, I'd love to hear about your vision.
                     </p>
-                    <div className="flex justify-center gap-8 mt-16 flex-wrap">
+                    <div className="grid grid-cols-2 md:flex  justify-center gap-4 md:gap-8 md:mt-16 flex-wrap">
                         <a
                             href="mailto:hello@lens.photography"
-                            className="px-8 py-4 bg-charcoal text-off-white no-underline rounded font-normal tracking-wider transition-all duration-normal border border-transparent hover:bg-transparent hover:border-white hover:text-white hover:-translate-y-1"
+                            className="inline-block mt-8 px-10 py-4 bg-transparent text-white border border-white font-body text-sm font-normal tracking-widest uppercase cursor-pointer relative overflow-hidden transition-all duration-normal hover:text-black before:content-[''] before:absolute before:top-0 before:-left-full before:w-full before:h-full before:bg-white before:transition-all before:duration-normal before:z-[-1] hover:before:left-0"
                         >
                             Email Me
                         </a>
                         <a
                             href="tel:+1234567890"
-                            className="px-8 py-4 bg-charcoal text-off-white no-underline rounded font-normal tracking-wider transition-all duration-normal border border-transparent hover:bg-transparent hover:border-white hover:text-white hover:-translate-y-1"
+                            className="inline-block mt-8 px-10 py-4 bg-transparent text-white border border-white font-body text-sm font-normal tracking-widest uppercase cursor-pointer relative overflow-hidden transition-all duration-normal hover:text-black before:content-[''] before:absolute before:top-0 before:-left-full before:w-full before:h-full before:bg-white before:transition-all before:duration-normal before:z-[-1] hover:before:left-0"
                         >
                             Call
                         </a>
                         <a
                             href="https://instagram.com"
+                            id='instagram'
+                            onClick={
+                                (e) => {
+                                    e.preventDefault()
+                                    document.getElementById('instagram')?.scrollIntoView({ behavior: 'smooth' })
+                                }
+                            }
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="px-8 py-4 bg-charcoal text-off-white no-underline rounded font-normal tracking-wider transition-all duration-normal border border-transparent hover:bg-transparent hover:border-white hover:text-white hover:-translate-y-1"
+                            className="inline-block mt-8 px-10 py-4 bg-transparent text-white border border-white font-body text-sm font-normal tracking-widest uppercase cursor-pointer relative overflow-hidden transition-all duration-normal hover:text-black before:content-[''] before:absolute before:top-0 before:-left-full before:w-full before:h-full before:bg-white before:transition-all before:duration-normal before:z-[-1] hover:before:left-0"
                         >
                             Instagram
                         </a>
