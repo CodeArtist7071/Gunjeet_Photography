@@ -67,7 +67,7 @@ const Portfolio = () => {
                     {portfolioItems.map((item, index) => (
                         <div
                             key={item.id}
-                            className="portfolio-item reveal relative overflow-hidden rounded-lg aspect-[4/5] cursor-pointer bg-charcoal-dark shadow-medium transition-transform duration-normal hover:-translate-y-2 hover:shadow-strong group"
+                            className="portfolio-item reveal relative overflow-hidden rounded-lg aspect-4/5 cursor-pointer bg-charcoal-dark shadow-medium transition-transform duration-normal hover:-translate-y-2 hover:shadow-strong group"
                             style={{ animationDelay: `${index * 0.2}s` }}
                         >
                             <img
@@ -76,7 +76,7 @@ const Portfolio = () => {
                                 className="w-full h-full object-cover transition-transform duration-slow group-hover:scale-110"
                             />
                             <div className="absolute bottom-0 left-0 right-0 p-8 gradient-overlay translate-y-full transition-transform duration-normal group-hover:translate-y-0">
-                                <h3 className="text-2xl font-medium mb-2">{item.title}</h3>
+                                <h3 className="text-2xl font-medium mb-2 text-white">{item.title}</h3>
                                 <p className="text-sm text-white uppercase tracking-widest">
                                     {item.category}
                                 </p>
