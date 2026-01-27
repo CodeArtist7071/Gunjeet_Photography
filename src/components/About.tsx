@@ -27,8 +27,8 @@ const About = () => {
         <section id="about" className="py-32 relative" ref={aboutRef}>
             <div className="container max-w-[1400px] mx-auto px-8">
                 <div className="text-center mb-24 reveal">
-                    <h2 className="text-4xl md:text-5xl lg:text-6xl mb-8">About</h2>
-                    <p className="text-base md:text-lg text-muted-gray">
+                    <h2 className="text-4xl md:text-5xl lg:text-6xl mb-8 text-white">About</h2>
+                    <p className="text-base md:text-lg text-white">
                         The artist behind the lens
                     </p>
                 </div>
@@ -58,7 +58,7 @@ const About = () => {
                     </div>
                     <div className="reveal">
                         <img
-                            src="/images/photographer.png"
+                            src="/gunjeet_photography/images/photographer.png"
                             alt="About the photographer"
                             className="w-full h-auto rounded-lg shadow-strong"
                         />

@@ -55,8 +55,8 @@ const Portfolio = () => {
         <section id="portfolio" className="py-32 relative">
             <div className="container max-w-[1400px] mx-auto px-8">
                 <div className="text-center mb-24 opacity-0 translate-y-8 animate-fade-in-up">
-                    <h2 className="text-4xl md:text-5xl lg:text-6xl mb-8">Portfolio</h2>
-                    <p className="text-base md:text-lg text-muted-gray">
+                    <h2 className="text-4xl md:text-5xl lg:text-6xl mb-8  text-white">Portfolio</h2>
+                    <p className="text-base md:text-lg text-white">
                         A curated selection of my recent work
                     </p>
                 </div>
@@ -77,7 +77,7 @@ const Portfolio = () => {
                             />
                             <div className="absolute bottom-0 left-0 right-0 p-8 gradient-overlay translate-y-full transition-transform duration-normal group-hover:translate-y-0">
                                 <h3 className="text-2xl font-medium mb-2">{item.title}</h3>
-                                <p className="text-sm text-gray-light uppercase tracking-widest">
+                                <p className="text-sm text-white uppercase tracking-widest">
                                     {item.category}
                                 </p>
                             </div>
