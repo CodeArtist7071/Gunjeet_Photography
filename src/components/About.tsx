@@ -24,16 +24,17 @@ const About = () => {
     }, [])
 
     return (
-        <section id="about" className="py-20 md:py-32 relative" ref={aboutRef}>
+        <section id="about" className="py-20 md:pt-20 relative" ref={aboutRef}>
             <div className="container max-w-[1400px] mx-auto px-8">
-                <div className="text-center mb-4 md:mb-24">
+                {/* <div className="text-center mb-4 md:mb-24">
                     <h2 className="text-4xl md:text-5xl lg:text-6xl mb-4 md:mb-8 text-white">About</h2>
                     <p className="text-base md:text-lg text-white">
                         The artist behind the lens
                     </p>
-                </div>
+                </div> */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-center">
                     <div className="max-w-[600px]">
+                        <h2 className="text-4xl md:text-5xl lg:text-6xl mb-4 md:mb-8 text-white">About</h2>
                         <h3 className="text-2xl text-white md:text-3xl lg:text-4xl mb-4">
                             Crafting Stories Through Shadow & Light
                         </h3>

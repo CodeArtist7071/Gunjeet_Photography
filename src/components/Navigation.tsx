@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Home, Grid, User, Mail } from 'lucide-react'
+import { logo_name } from '../constants/variables'
 
 const Navigation = () => {
     const [scrolled, setScrolled] = useState(false)
@@ -23,7 +24,7 @@ const Navigation = () => {
     return (
         <>
             <nav
-                className={`fixed top-0 left-0 w-full z-[1000] transition-all duration-normal ${scrolled
+                className={`fixed top-0 left-0 w-full z-100 transition-all duration-normal ${scrolled
                     ? 'py-4 bg-black/95 shadow-medium'
                     : 'py-8 bg-black/80 backdrop-blur-md'
                     }`}
@@ -32,13 +33,13 @@ const Navigation = () => {
                     <div className="flex justify-between items-center">
                         <a
                             href="#home"
-                            className="font-display text-2xl text-white tracking-[0.1em] font-medium transition-colors duration-fast hover:text-muted-gray"
+                            className="font-display text-2xl text-white tracking-widest font-medium transition-colors duration-fast hover:text-muted-gray"
                             onClick={(e) => {
                                 e.preventDefault()
                                 scrollToSection('home')
                             }}
                         >
-                            LENS
+                            {logo_name.toUpperCase()}
                         </a>
                         <ul className="hidden md:flex gap-8 list-none">
                             {['portfolio', 'about', 'contact'].map((section) => (
@@ -60,58 +61,58 @@ const Navigation = () => {
                 </div>
             </nav>
 
-            <nav className="md:hidden fixed bottom-0 left-0 w-full z-[1000] bg-black/95 backdrop-blur-lg border-t border-charcoal/50 text-white pb-safe">
+            <nav className="md:hidden fixed bottom-0 left-0 w-full z-200 bg-black/40 backdrop-blur-lg text-white pb-safe">
                 <ul className="flex justify-around items-center h-16 m-0 p-0 list-none">
                     <li>
                         <a
                             href="#home"
-                            className="flex flex-col items-center justify-center p-2 text-muted-gray hover:text-white transition-colors"
+                            className="flex flex-col bg-black/35 rounded-full h-12 w-12 backdrop-blur-lg items-center justify-center p-2 text-muted-gray hover:text-white transition-colors"
                             onClick={(e) => {
                                 e.preventDefault()
                                 scrollToSection('home')
                             }}
                         >
                             <Home size={20} className="mb-1" />
-                            <span className="text-[10px] uppercase tracking-wider">Home</span>
+                            {/* <span className="text-[10px] uppercase tracking-wider">Home</span> */}
                         </a>
                     </li>
                     <li>
                         <a
                             href="#portfolio"
-                            className="flex flex-col items-center justify-center p-2 text-muted-gray hover:text-white transition-colors"
+                            className="flex flex-col bg-black/35 rounded-full h-12 w-12 items-center justify-center p-2 text-muted-gray hover:text-white transition-colors"
                             onClick={(e) => {
                                 e.preventDefault()
                                 scrollToSection('portfolio')
                             }}
                         >
                             <Grid size={20} className="mb-1" />
-                            <span className="text-[10px] uppercase tracking-wider">Work</span>
+                            {/* <span className="text-[10px] uppercase tracking-wider">Work</span> */}
                         </a>
                     </li>
                     <li>
                         <a
                             href="#about"
-                            className="flex flex-col items-center justify-center p-2 text-muted-gray hover:text-white transition-colors"
+                            className="flex flex-col bg-black/35 rounded-full h-12 w-12 items-center justify-center p-2 text-muted-gray hover:text-white transition-colors"
                             onClick={(e) => {
                                 e.preventDefault()
                                 scrollToSection('about')
                             }}
                         >
                             <User size={20} className="mb-1" />
-                            <span className="text-[10px] uppercase tracking-wider">About</span>
+                            {/* <span className="text-[10px] uppercase tracking-wider">About</span> */}
                         </a>
                     </li>
                     <li>
                         <a
                             href="#contact"
-                            className="flex flex-col items-center justify-center p-2 text-muted-gray hover:text-white transition-colors"
+                            className="flex flex-col bg-black/35 rounded-full h-12 w-12 backdrop-blur-lg items-center justify-center p-2 text-muted-gray hover:text-white transition-colors"
                             onClick={(e) => {
                                 e.preventDefault()
                                 scrollToSection('contact')
                             }}
                         >
                             <Mail size={20} className="mb-1" />
-                            <span className="text-[10px] uppercase tracking-wider">Contact</span>
+                            {/* <span className="text-[10px] uppercase tracking-wider">Contact</span> */}
                         </a>
                     </li>
                 </ul>

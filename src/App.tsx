@@ -1,20 +1,14 @@
-import About from "./components/About"
-import Contact from "./components/Contact"
-import Footer from "./components/Footer"
-import Hero from "./components/Hero"
-import Navigation from "./components/Navigation"
-import Portfolio from "./components/Portfolio"
-
+import { Routes, Route } from "react-router-dom"
+import Home from "./components/Home"
+import EventGallery from "./components/EventGallery"
 
 function App() {
     return (
-        <div className="bg-black">
-            <Navigation />
-            <Hero />
-            <Portfolio />
-            <About />
-            <Contact />
-            <Footer />
+        <div className="bg-black min-h-screen text-white">
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/gallery/:eventType" element={<EventGallery />} />
+            </Routes>
         </div>
     )
 }

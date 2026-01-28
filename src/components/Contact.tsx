@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react'
+import { email_id, instagram_id, phone_no } from '../constants/variables'
 
 const Contact = () => {
     const contactRef = useRef<HTMLDivElement>(null)
@@ -41,21 +42,21 @@ const Contact = () => {
                         Whether you're looking for editorial photography, portrait sessions,
                         or custom artwork, I'd love to hear about your vision.
                     </p>
-                    <div className="grid grid-cols-2 md:flex  justify-center gap-4 md:gap-8 md:mt-16 flex-wrap">
+                    <div className="grid grid-cols-2 md:flex  justify-center gap-4 md:gap-8 mt-10 md:mt-16 flex-wrap">
                         <a
-                            href="mailto:hello@lens.photography"
-                            className="inline-block mt-8 px-10 py-4 bg-transparent text-white border border-white font-body text-sm font-normal tracking-widest uppercase cursor-pointer relative overflow-hidden transition-all duration-normal hover:text-black before:content-[''] before:absolute before:top-0 before:-left-full before:w-full before:h-full before:bg-white before:transition-all before:duration-normal before:z-[-1] hover:before:left-0"
+                            href={`mailto:${email_id}`}
+                            className="inline-block md:mt-8 px-5 py-4 bg-transparent text-white border border-white font-body text-sm font-normal tracking-widest uppercase cursor-pointer relative overflow-hidden transition-all duration-normal hover:text-black before:content-[''] before:absolute before:top-0 before:-left-full before:w-full before:h-full before:bg-white before:transition-all before:duration-normal before:z-[-1] hover:before:left-0"
                         >
                             Email Me
                         </a>
                         <a
-                            href="tel:+1234567890"
-                            className="inline-block mt-8 px-10 py-4 bg-transparent text-white border border-white font-body text-sm font-normal tracking-widest uppercase cursor-pointer relative overflow-hidden transition-all duration-normal hover:text-black before:content-[''] before:absolute before:top-0 before:-left-full before:w-full before:h-full before:bg-white before:transition-all before:duration-normal before:z-[-1] hover:before:left-0"
+                            href={`tel:${phone_no}`}
+                            className="inline-block md:mt-8 px-5 py-4 bg-transparent text-white border border-white font-body text-sm font-normal tracking-widest uppercase cursor-pointer relative overflow-hidden transition-all duration-normal hover:text-black before:content-[''] before:absolute before:top-0 before:-left-full before:w-full before:h-full before:bg-white before:transition-all before:duration-normal before:z-[-1] hover:before:left-0"
                         >
                             Call
                         </a>
                         <a
-                            href="https://instagram.com"
+                            href={instagram_id}
                             id='instagram'
                             onClick={
                                 (e) => {
@@ -65,7 +66,7 @@ const Contact = () => {
                             }
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-block mt-8 px-10 py-4 bg-transparent text-white border border-white font-body text-sm font-normal tracking-widest uppercase cursor-pointer relative overflow-hidden transition-all duration-normal hover:text-black before:content-[''] before:absolute before:top-0 before:-left-full before:w-full before:h-full before:bg-white before:transition-all before:duration-normal before:z-[-1] hover:before:left-0"
+                            className="inline-block col-span-full md:mt-8 px-10 py-4 bg-transparent text-white border border-white font-body text-sm font-normal tracking-widest uppercase cursor-pointer relative overflow-hidden transition-all duration-normal hover:text-black before:content-[''] before:absolute before:top-0 before:-left-full before:w-full before:h-full before:bg-white before:transition-all before:duration-normal before:z-[-1] hover:before:left-0"
                         >
                             Instagram
                         </a>
