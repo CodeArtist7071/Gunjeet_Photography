@@ -1,7 +1,8 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useIsMobile } from '../hooks/useIsMobile'
-import { ArrowLeftCircle } from 'lucide-react'
+import { ArrowLeftCircle, X, XCircleIcon } from 'lucide-react'
+import { AnimatePresence, motion } from 'framer-motion'
 
 interface PortfolioItem {
     id: number
@@ -112,11 +113,14 @@ export const Portfolio = () => {
 
 
 const PortfolioPage = ({navigate}:any) => {
+  const [selectedCategory, setSelectedCategory] = useState("all");
+ 
   const masonryItems = [
     {
       id: 1,
       title: "Veiled, 2023",
       aspect: "3/5",
+      category: "street",
       image:
         "https://lh3.googleusercontent.com/aida-public/AB6AXuBgtynNJGBqzUF7iXrEXxrsixnexvccDjlC29AvRUC_3Bt69j6mIPQpLgOA1a90Sspi2Jl-HVI7fn1icWdZYopfW71OF3XGu5GpNo9Zlh378WlsbDs5OC7hA4zjb7bIgVd5YRs1W3NmQ-K2S-RXuBj_qtUllAWISRwFtfr9iRBNxNwUBi1XZFFS7B6jGO9ebdypdDlcmLFeuf6vF1NNL6jSxlfyzGnrPGR_TqfJO2b0zwLOWNqL2oYLH1AZCeCHQjuUr7gFa9oI_e8",
     },
@@ -124,6 +128,7 @@ const PortfolioPage = ({navigate}:any) => {
       id: 2,
       title: "Structural, 2024",
       aspect: "1/1",
+      category: "street",
       image:
         "https://lh3.googleusercontent.com/aida-public/AB6AXuCxXZKfPZH1JVeYWdv2cl9LEeVm4WVs_TKBzDLd7nPc-uLtwerugfKsizPmDXDc48NN6nDgQQtFy9DQsJHVX9vGaYkBKjqCWL6xS21JQQZwHsiYIgeam0LlfZSidl8-odiplo5ghqRNWvJ-udo2-82e1OBQhSaoGgYFxzvm3RpWGngieg0YfCUW8ba-x0uPqOv8053S7GPLPdHqOPr6NjtcTCor-v0FsdUn9h8DsxLmacBf5cUSuXC5pdaZk61hhBAD88Vn9_o30SQ",
     },
@@ -131,6 +136,7 @@ const PortfolioPage = ({navigate}:any) => {
       id: 3,
       title: "Mist, 2023",
       aspect: "2/3",
+      category: "architecture",
       image:
         "https://lh3.googleusercontent.com/aida-public/AB6AXuC9qVarHtEMNEz45Tukx1ppfRJe-WYR1l5DbjyQrb96SmoLT3s9nAskqqrZ_XMAX__KxOh10avuv8YBPOuiNt7UrAn4LSQgzS2LyN_aEINJeIhbMl1RAqIRY968i4UupY5M0H2s5EaogJVFe92HGGNXUkk_AmS0qRUt9XeG6AhlV2SEd9m7tnWVbWFfICZtkwTyu00hV5VzoQ4YdormvCY8DgJQKXtK7CM822lWsQouaQXB-PRHXLr6KhFhX9LEMCUvzXg7QkaoSS0",
     },
@@ -138,6 +144,7 @@ const PortfolioPage = ({navigate}:any) => {
       id: 4,
       title: "Shadows, 2024",
       aspect: "4/5",
+      category: "architecture",
       image:
         "https://lh3.googleusercontent.com/aida-public/AB6AXuDIv8FDDqUVnEMUKzeOhZ5sPF1AaEBM_DPygny-uJhkgTEb7LSeGt5c4_MO9IUm1xi3GP6UXKpK4_djCVAd6Xy07JxI3yBb93xMuXLuvcEYG3jpz0fyC_8lm3bXJDCsf3jAxNEJinwXsfECGdvNw0A0nAqjyU_Qq_M_X63AcYrQFrO8SlbAqPnt2ZDqp3kovwoSnrd2DCirOdNIfjxsA_I1BbM32wl8FM1pE0vY-m4R8qCW29fybRm8nvc76RXml9JGn6ZTLsC4hag",
     },
@@ -145,6 +152,7 @@ const PortfolioPage = ({navigate}:any) => {
       id: 5,
       title: "Nature, 2022",
       aspect: "1/1",
+      category: "street",
       image:
         "https://lh3.googleusercontent.com/aida-public/AB6AXuAB12jYrFmnfvCtw6QrGN5IZMqmpdTrJrSRnqY_Q5jqdts6GcIbBukIvTL6ns-BZq5vxGzB46ul6k9y87avYhqwP0or5IwNLZXJfDWBwacXTDYrsoVoD1nshuQxOFWg24KVChEkgbCGuc1FrJPZ56JY27Cczq0u4yG1gW7W_5TccCxFoJNH-2LtfZoEtZWdsuctQjU8ZSdQrpI46lRKR7_VdEqIsKtS-khUJOTi7bUeloadJWVoLBlm585QrwTuHdTvpZzOttJT2zw",
     },
@@ -152,10 +160,18 @@ const PortfolioPage = ({navigate}:any) => {
       id: 6,
       title: "Analog, 2023",
       aspect: "3/4",
+      category: "architecture",
       image:
         "https://lh3.googleusercontent.com/aida-public/AB6AXuBbpzfFlCbXmPpUUdQ1sFHRhRBhVeYEbNNoj46b8vnDkipzsf_MJnbVCveJzC3_8e6WLcrNe9nbffBBfEO5nql0uk7OUrxKUR8l_dbbyYTuwGO4QfEekc-tAB-2TwUVmNvvYpMt2-Or1-TmxCFfObxeH_alRWuABaTvjHwCN63nd01PpoErQVDVeKdJEsGt6PPV1Mc0DHrSsR-m20Xw_hU8zXl-qGGRR1LNCR-2YnFZ2R_rQgC9OZjjoIAouG6de8H-cj-OpA-jLD4",
     },
   ];
+   const filteredItems =
+  selectedCategory === "all"
+    ? masonryItems
+    : masonryItems.filter(
+        (item) => item.category === selectedCategory
+      );
+  const [selectedImage, setSelectedImage] = useState<any>(null);
 
   return (
     <div id="portfolio-m" className=" text-slate-900 dark:text-slate-100 font-display flex flex-col overflow-x-hidden">
@@ -165,58 +181,117 @@ const PortfolioPage = ({navigate}:any) => {
           <ArrowLeftCircle size={35} color='white' onClick={()=>navigate(-1)}/>
         </a>
         <h1 className="text-sm font-bold tracking-widest uppercase">Portfolio</h1>
-        {/* <button className="flex items-center justify-center p-1 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors">
-          <span className="material-symbols-outlined">more_vert</span>
-        </button> */}
       </header>
 
       {/* Main Title */}
       <div className="px-4 pb-4 pt-24">
-        <h2 className="text-4xl font-extrabold tracking-tight mb-2">Selected Works</h2>
-        <p className="text-slate-500 dark:text-slate-400 text-sm max-w-xs">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl mb-4 text-white">Art of Works</h2>
+        <p className="text-slate-500 dark:text-slate-400 text-sm max-w-xs mb-8">
           A curated collection of monochrome street photography and architectural shadows.
         </p>
       </div>
 
       {/* Filter Buttons */}
-      <div className="pb-6 overflow-x-auto no-scrollbar">
-        <div className="flex px-4 gap-3">
-          {["All", "Street", "Portrait", "Abstract"].map((category) => (
-            <button
-              key={category}
-              className={`px-5 py-2 rounded-full text-xs font-bold tracking-wider uppercase whitespace-nowrap ${
-                category === "All"
-                  ? "bg-primary text-white"
-                  : "bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-primary/20 transition-colors"
-              }`}
-            >
-              {category}
-            </button>
-          ))}
-        </div>
-      </div>
+    <div className="pb-6 overflow-x-auto no-scrollbar">
+  <div className="flex px-4 gap-3 relative">
+    {["all", "street", "nature", "architecture"].map((category) => {
+      const isActive = selectedCategory === category;
+
+      return (
+        <button
+          key={category}
+          onClick={() => setSelectedCategory(category)}
+          className="relative px-5 py-2 rounded-full text-xs font-bold tracking-wider uppercase whitespace-nowrap"
+        >
+          {isActive && (
+            <motion.span
+              layoutId="activeCategory"
+              className="absolute inset-0 bg-primary rounded-full"
+              transition={{ type: "spring", stiffness: 300, damping: 25 }}
+            />
+          )}
+
+          <span
+            className={`relative z-10 ${
+              isActive
+                ? "text-white"
+                : "text-slate-600 dark:text-slate-400"
+            }`}
+          >
+            {category}
+          </span>
+        </button>
+      );
+    })}
+  </div>
+</div>
+
+     
 
       {/* Masonry Gallery */}
-     <div className="columns-3 gap-4 md:hidden">
-    {masonryItems.map((item) => (
-      <div
+<div className="columns-2 gap-4 px-6 md:hidden">
+  <AnimatePresence mode="popLayout">
+    {filteredItems.map((item) => (
+      <motion.div
         key={item.id}
+        layout
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        exit={{ opacity: 0, scale: 0.9 }}
+        transition={{ duration: 0.35 }}
+        onClick={() => setSelectedImage(item)}
         className="group relative overflow-hidden rounded-lg mb-4 break-inside-avoid"
       >
-        <div
-          className={`bg-slate-200 dark:bg-slate-800 bg-cover bg-center transition-transform duration-500 group-hover:scale-105 aspect-[${item.aspect}]`}
-          style={{ backgroundImage: `url('${item.image}')` }}
-          aria-label={item.title}
-        ></div>
+         <motion.div
+    layoutId={`image-${item.id}`}
+    className="bg-slate-200 dark:bg-slate-800 bg-cover bg-center"
+    style={{
+      backgroundImage: `url('${item.image}')`,
+      aspectRatio: item.aspect,
+    }}
+  />
+
         <div className="absolute bottom-0 left-0 right-0 p-3 bg-linear-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
-          <p className="text-[10px] text-white/70 uppercase tracking-widest">{item.title}</p>
+          <p className="text-[10px] text-white/70 uppercase tracking-widest">
+            {item.title}
+          </p>
         </div>
-      </div>
+      </motion.div>
     ))}
-  </div>
+  </AnimatePresence>
+  <AnimatePresence>
+  {selectedImage && (
+    <motion.div
+      className="fixed inset-0 bg-black/90 flex items-center justify-center z-50 p-6"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      onClick={() => setSelectedImage(null)}
+    >
+      <motion.div
+        layoutId={`image-${selectedImage.id}`}
+        className="w-full max-w-4xl bg-cover bg-center rounded-lg"
+        style={{
+          backgroundImage: `url('${selectedImage.image}')`,
+          aspectRatio: selectedImage.aspect,
+        }}
+      />
+
+      {/* Close Button */}
+      <button
+        className="absolute top-6 right-6 text-white text-xl"
+        onClick={() => setSelectedImage(null)}
+      >
+        <XCircleIcon size={34} color='white'/>
+      </button>
+    </motion.div>
+  )}
+</AnimatePresence>
+</div>
+
 
       {/* Footer */}
-      <div className="mt-12 text-center">
+      <div className="mt-12 text-center mb-24">
         <p className="text-[10px] font-bold tracking-[0.2em] uppercase opacity-40 mb-4">End of Gallery</p>
         <button className="text-primary text-xs font-bold uppercase tracking-widest border-b-2 border-primary/20 pb-1 hover:border-primary transition-all">
           Back to Top

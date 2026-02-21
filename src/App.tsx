@@ -26,37 +26,37 @@ function App() {
                 exit={{ opacity: 0, x: -20 }}
                 transition={{ duration: 0.5 }}
 ><Home /></motion.div>} />
-                <Route path="/gallery/:eventType" element={<motion.div initial={{ opacity: 0, y: 20 }}
+                <Route path="/gallery/:eventType" element={<motion.div initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.2 }}
 ><EventGallery /></motion.div>} />
-                <Route path="/portfolio" element={<motion.div initial={{ opacity: 0, y: 20 }}
+                <Route path="/portfolio" element={<motion.div initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.2 }}
 ><Portfolio/></motion.div>}/>
-                <Route path="/portfolio-m"element={<motion.div initial={{ opacity: 0, y: 20 }}
+                <Route path="/portfolio-m"element={<motion.div initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.2 }}
 ><MobilePortfolioPage/></motion.div>}/>
-                <Route path="/about" element={<motion.div initial={{ opacity: 0, y: 20 }}
+                <Route path="/about" element={<motion.div initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.2 }}
  ><About/></motion.div>}/>
-                <Route path="/about-mobile" element={<motion.div initial={{ opacity: 0, y: 20 }}
+                <Route path="/about-mobile" element={<motion.div initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.2 }}
 ><MobileAboutPage/></motion.div>}/>
-                <Route path="/contact" element={<motion.div initial={{ opacity: 0, y: 20 }}
+                <Route path="/contact" element={<motion.div initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.2 }}
 ><Contact/></motion.div>}/>
-                <Route path="/contact-mobile" element={<motion.div initial={{ opacity: 0, x: 50 }}
+                <Route path="/contact-mobile" element={<motion.div initial={{ opacity: 0, x: 30 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.2 }}

@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useIsMobile } from "../hooks/useIsMobile"
 import { ArrowLeftCircle } from "lucide-react";
 
@@ -79,6 +79,7 @@ return(
 
 
 function MobileProfilePage() {
+  const [isLoading, setIsLoading] = useState(true);
   return (
     <div id="about-mobile" className="relative md:hidden flex min-h-screen w-full  flex-col max-w-md mx-auto shadow-2xl overflow-x-hidden">
 
@@ -103,11 +104,15 @@ function MobileProfilePage() {
 
         {/* Hero */}
         <div className="relative mb-8">
-          <div className="aspect-[4/5] w-full rounded-xl overflow-hidden bg-slate-200 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+          <div className="aspect-4/5 w-full rounded-xl overflow-hidden bg-slate-200 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+             {isLoading && (
+          <div className="absolute w-full h-full inset-0 animate-pulse bg-slate-200 dark:bg-slate-500" />
+  )}
             <img
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmCvLHYMDZd-3vBJOTcZWNbT0GKqcDLqOQbeI84zG5vlmWFF6HR01DflZHh3XlpFlUYbI2S1Knx8g39NC7PZvHObxBN8pDBTB2UZ-PIfb8PMHPErGGWZf4vRv4tzpNZzj6GAScBUuOcPbtcKygSL93Bm9FWQQPZ44vG9RCKg4i7sncvIRec5BQz5NTp857qof0AhdKERa7Osx9S9-zmdJww3exZrRon1ilpR83AhIEOI4nrxL3m5F3q0C3exsgB2dbTBFRir0zNS0"
               alt="Portrait"
               className="w-full h-full object-cover opacity-90"
+              onLoad={() => setIsLoading(false)}
             />
           </div>
 

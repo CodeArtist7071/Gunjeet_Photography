@@ -2,10 +2,12 @@ import { useEffect, useRef } from 'react'
 import { email_id, instagram_id, phone_no } from '../constants/variables'
 import { useIsMobile } from '../hooks/useIsMobile'
 import { ArrowLeftCircle, MailIcon, ShareIcon } from 'lucide-react'
+import { useNavigate } from 'react-router-dom'
 
 export const Contact = () => {
     const contactRef = useRef<HTMLDivElement>(null)
     const isMobile = useIsMobile();
+    const navigate = useNavigate();
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -32,7 +34,7 @@ export const Contact = () => {
 
     return (
         (isMobile)?(
-           <ContactPage/>
+           <ContactPage navigate={navigate}/>
         ):(
         <section id="contact" className="hidden md:block py-20 md:py-32 relative">
             <div className="container max-w-350 mx-auto px-8">
@@ -87,7 +89,7 @@ export const Contact = () => {
 
 
 
-const ContactPage = () => {
+const ContactPage = ({navigate}:any) => {
 
   function handleSubmit(e:any) {
     e.preventDefault();
@@ -107,19 +109,18 @@ const ContactPage = () => {
   <header className="flex items-center justify-between p-6 w-full fixed top-0 left-0 z-50 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md">
     <a
       className="text-slate-900 dark:text-slate-100 transition-opacity hover:opacity-70"
-      href="/"
+      onClick={()=>navigate(-1)}
     >
-      <ArrowLeftCircle size={35} color="white" />
+      <ArrowLeftCircle size={35} color="white"  />
     </a>
     <h1 className="text-sm uppercase tracking-[0.2em] font-medium">Contact</h1>
-    <div className="w-6" />
   </header>
 
       {/* Main Content */}
       <main className="flex-1 flex flex-col max-w-2xl mx-auto w-full px-6 py-24">
         {/* Title */}
         <div className="mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-slate-900 dark:text-slate-100">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl mb-8 text-white">
             Get in Touch
           </h2>
           <p className="text-slate-500 dark:text-slate-400 text-lg leading-relaxed max-w-md">
@@ -136,7 +137,7 @@ const ContactPage = () => {
                 Full Name
               </label>
               <input
-                className="w-full bg-transparent border-0 border-b border-slate-200 dark:border-slate-800 focus:ring-0 focus:border-primary px-0 py-3 text-lg placeholder:text-slate-300 dark:placeholder:text-slate-700 transition-all"
+                className="w-full px-4 bg-transparent border-0 border-b border-slate-200 dark:border-slate-800 focus:ring-0 focus:border-primary px-0 py-3 text-lg placeholder:text-slate-300 dark:placeholder:text-slate-700 transition-all"
                 placeholder="e.g. Julian Montgomery"
                 type="text"
               />
@@ -148,7 +149,7 @@ const ContactPage = () => {
                 Email Address
               </label>
               <input
-                className="w-full bg-transparent border-0 border-b border-slate-200 dark:border-slate-800 focus:ring-0 focus:border-primary px-0 py-3 text-lg placeholder:text-slate-300 dark:placeholder:text-slate-700 transition-all"
+                className="w-full px-4 bg-transparent border-0 border-b border-slate-200 dark:border-slate-800 focus:ring-0 focus:border-primary py-3 text-lg placeholder:text-slate-300 dark:placeholder:text-slate-700 transition-all"
                 placeholder="name@example.com"
                 type="email"
               />
@@ -160,7 +161,7 @@ const ContactPage = () => {
                 How can I help?
               </label>
               <textarea
-                className="w-full bg-transparent border-0 border-b border-slate-200 dark:border-slate-800 focus:ring-0 focus:border-primary px-0 py-3 text-lg placeholder:text-slate-300 dark:placeholder:text-slate-700 resize-none transition-all"
+                className="w-full px-4 bg-transparent border-0 border-b border-slate-200 dark:border-slate-800 focus:ring-0 focus:border-primary py-3 text-lg placeholder:text-slate-300 dark:placeholder:text-slate-700 resize-none transition-all"
                 placeholder="Tell me about your project..."
                 rows={4}
               ></textarea>
@@ -170,7 +171,7 @@ const ContactPage = () => {
           {/* Submit */}
           <button
             type="submit"
-            className="w-full bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 font-bold py-5 rounded-lg hover:bg-primary dark:hover:bg-primary dark:hover:text-white transition-all duration-300 uppercase tracking-widest text-sm flex items-center justify-center gap-2"
+            className="w-full bg-slate-100 text-white dark:text-slate-900 font-bold py-5 rounded-lg hover:bg-primary dark:hover:bg-primary dark:hover:text-white transition-all duration-300 uppercase tracking-widest text-sm flex items-center justify-center gap-2"
           >
             Send Message
           </button>
