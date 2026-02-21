@@ -88,22 +88,35 @@ export const Contact = () => {
 
 
 const ContactPage = () => {
+
+  function handleSubmit(e:any) {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const name = form.fullName.value;
+    const email = form.email.value;
+    const message = form.message.value;
+
+    window.location.href = `mailto:${email_id}?subject=Contact from ${name}&body=${encodeURIComponent(
+      `Name: ${name}\nEmail: ${email}\nMessage: ${message}`
+    )}`;
+  }
   return (
     <div id="contact-mobile" className=" md:hidden bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col font-display">
       {/* Header */}
-      <header className="flex items-center justify-between p-6 max-w-2xl mx-auto w-full">
-        <a
-          className="text-slate-900 dark:text-slate-100 transition-opacity hover:opacity-70"
-          href="/"
-        >
-          <ArrowLeftCircle size={35} color='white'/>
-        </a>
-        <h1 className="text-sm uppercase tracking-[0.2em] font-medium">Contact</h1>
-        <div className="w-6" />
-      </header>
+       {/* Header */}
+  <header className="flex items-center justify-between p-6 w-full fixed top-0 left-0 z-50 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md">
+    <a
+      className="text-slate-900 dark:text-slate-100 transition-opacity hover:opacity-70"
+      href="/"
+    >
+      <ArrowLeftCircle size={35} color="white" />
+    </a>
+    <h1 className="text-sm uppercase tracking-[0.2em] font-medium">Contact</h1>
+    <div className="w-6" />
+  </header>
 
       {/* Main Content */}
-      <main className="flex-1 flex flex-col max-w-2xl mx-auto w-full px-6 py-12">
+      <main className="flex-1 flex flex-col max-w-2xl mx-auto w-full px-6 py-24">
         {/* Title */}
         <div className="mb-12">
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-slate-900 dark:text-slate-100">
@@ -115,7 +128,7 @@ const ContactPage = () => {
         </div>
 
         {/* Form */}
-        <form className="space-y-8">
+        <form className="space-y-8"  onSubmit={(e)=>handleSubmit(e)}>
           <div className="space-y-6">
             {/* Full Name */}
             <div className="group">
@@ -160,7 +173,6 @@ const ContactPage = () => {
             className="w-full bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 font-bold py-5 rounded-lg hover:bg-primary dark:hover:bg-primary dark:hover:text-white transition-all duration-300 uppercase tracking-widest text-sm flex items-center justify-center gap-2"
           >
             Send Message
-            <span className="material-symbols-outlined text-sm">send</span>
           </button>
         </form>
 

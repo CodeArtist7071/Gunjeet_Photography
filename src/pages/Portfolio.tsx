@@ -66,7 +66,7 @@ export const Portfolio = () => {
 
     return (
         (isMobile)? (
-        <PortfolioPage/>
+        <PortfolioPage navigate={navigate}/>
         ):(
              <section id="portfolio" className="py-20 md:pt-5 relative">
             <div className="container max-w-350 mx-auto px-8">
@@ -111,7 +111,7 @@ export const Portfolio = () => {
 
 
 
-const PortfolioPage = () => {
+const PortfolioPage = ({navigate}:any) => {
   const masonryItems = [
     {
       id: 1,
@@ -160,19 +160,18 @@ const PortfolioPage = () => {
   return (
     <div id="portfolio-m" className=" text-slate-900 dark:text-slate-100 font-display flex flex-col overflow-x-hidden">
       {/* Header */}
-      <header className="sticky top-0 z-50 flex items-center justify-between dark:bg-background-dark/80 backdrop-blur-md px-4 py-4 border-b border-slate-200 dark:border-slate-800">
+      <header className="flex items-center justify-between p-6 w-full fixed top-0 left-0 z-50 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md">
         <a href="#" className="flex items-center gap-2 text-primary group transition-all">
-          <ArrowLeftCircle/>
-          <span className="text-sm font-bold tracking-widest uppercase">Home</span>
+          <ArrowLeftCircle size={35} color='white' onClick={()=>navigate(-1)}/>
         </a>
-        <h1 className="text-xs font-black tracking-[0.3em] uppercase opacity-60">Portfolio '24</h1>
+        <h1 className="text-sm font-bold tracking-widest uppercase">Portfolio</h1>
         {/* <button className="flex items-center justify-center p-1 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors">
           <span className="material-symbols-outlined">more_vert</span>
         </button> */}
       </header>
 
       {/* Main Title */}
-      <div className="px-4 pt-8 pb-4">
+      <div className="px-4 pb-4 pt-24">
         <h2 className="text-4xl font-extrabold tracking-tight mb-2">Selected Works</h2>
         <p className="text-slate-500 dark:text-slate-400 text-sm max-w-xs">
           A curated collection of monochrome street photography and architectural shadows.

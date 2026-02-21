@@ -9,9 +9,11 @@ import About from "./components/About"
 import {About as MobileAboutPage} from "../src/pages/About"
 import Contact from "./components/Contact"
 import {Contact as MobileContactPage} from "../src/pages/Contact"
+import { useIsMobile } from "./hooks/useIsMobile"
 
 
 function App() {
+    const isMobile = useIsMobile();
     return (
         <div className="bg-black min-h-screen text-white">
             <Navigation/>
@@ -25,7 +27,8 @@ function App() {
                 <Route path="/contact" element={<Contact/>}/>
                 <Route path="/contact-mobile" element={<MobileContactPage/>}/>
             </Routes>
-            <Footer/>
+            {isMobile ? null : <Footer/>}
+            
         </div>
     )
 }

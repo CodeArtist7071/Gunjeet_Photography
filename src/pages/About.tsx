@@ -83,7 +83,7 @@ function MobileProfilePage() {
     <div id="about-mobile" className="relative md:hidden flex min-h-screen w-full  flex-col max-w-md mx-auto shadow-2xl overflow-x-hidden">
 
       {/* Header */}
-      <div className="flex items-center justify-between px-6 py-4 sticky top-0 z-10 backdrop-blur-md">
+      <div className="flex items-center justify-between p-6 w-full fixed top-0 left-0 z-50 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md">
         {/* <button className="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
           <span className="material-symbols-outlined">arrow_back</span>
         </button> */}
@@ -99,7 +99,7 @@ function MobileProfilePage() {
       </div>
 
       {/* Main */}
-      <main className="flex-1 px-6 pb-24 pt-4">
+      <main className="flex-1 px-6 pb-24 pt-24">
 
         {/* Hero */}
         <div className="relative mb-8">
