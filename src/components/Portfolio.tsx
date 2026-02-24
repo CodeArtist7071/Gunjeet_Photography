@@ -62,7 +62,10 @@ export const Portfolio = () => {
     }
 
     return (
-        <section id="portfolio" className="py-20 md:pt-5 relative">
+      <section id="portfolio" className="py-20 md:pt-5 relative">
+        <div className="absolute inset-0 
+          bg-[radial-gradient(circle_at_top_left,rgba(0,0,0,0.9)_0%,rgba(0,0,0,0.9)_30%,rgba(0,0,0,0.9)_45%,rgba(0,0,0,0.9)_65%,rgba(0,0,0,0)_75%)]">
+        </div>
             <div className="container max-w-350 mx-auto px-8">
                 <div className="text-center mb-12 md:mb-24 opacity-55 translate-y-8 animate-fade-in-up">
                     <h2 className="text-4xl md:text-5xl lg:text-6xl mb-8 text-white">Event Photography</h2>

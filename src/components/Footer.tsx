@@ -2,8 +2,8 @@ const Footer = () => {
     const currentYear = new Date().getFullYear()
 
     return (
-        <footer className="pb-30 md:pb-10 text-center bg-black">
-            <div className="container max-w-[1400px] mx-auto px-8">
+        <footer className="pb-30 md:pb-10 bg-black text-center">
+            <div className="container max-w-350 mx-auto px-8">
                 <p className="text-white text-sm">
                     © {currentYear} LENS Photography. All rights reserved.
                 </p>

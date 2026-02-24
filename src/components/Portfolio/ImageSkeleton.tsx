@@ -1,16 +1,10 @@
 export const ImageSkeleton = () => {
   return (
-    
-    <div role="status" className="max-w-sm animate-pulse">
-        <div className="h-2.5 bg-neutral-quaternary rounded-full w-48 mb-4"></div>
-        <div className="h-2 bg-neutral-quaternary rounded-full max-w-90 mb-2.5"></div>
-        <div className="h-2 bg-neutral-quaternary rounded-full mb-2.5"></div>
-        <div className="h-2 bg-neutral-quaternary rounded-full max-w-90 mb-2.5"></div>
-        <div className="h-2 bg-neutral-quaternary rounded-full max-w-90 mb-2.5"></div>
-        <div className="h-2 bg-neutral-quaternary rounded-full max-w-90"></div>
-        <span className="sr-only">Loading...</span>
+    <div role="status" className="animate-pulse columns-2 gap-4 px-6">
+      <div className="w-full h-50 bg-white/10 rounded-xl mb-4"></div>
+      <div className="w-full h-50 bg-white/10 rounded-xl mb-4"></div>
+      <div className="w-full h-50 bg-white/10 rounded-xl mb-4"></div>
+      <div className="w-full h-50 bg-white/10 rounded-xl mb-4"></div>
     </div>
-    
-
-  )
-}
+  );
+};

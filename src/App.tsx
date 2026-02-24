@@ -17,7 +17,7 @@ function App() {
   const isMobile = useIsMobile();
   const location = useLocation();
   return (
-    <div className="bg-black min-h-screen text-white">
+    <div className=" min-h-screen text-white bg-black md:bg-transparent">
       <ScrollToTop/>
       <Navigation />
       <AnimatePresence mode="wait">

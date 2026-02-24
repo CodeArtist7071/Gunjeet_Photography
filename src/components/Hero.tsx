@@ -29,11 +29,11 @@ const Hero = () => {
     return (
         <section
             id="home"
-            className="min-h-screen pt-25 md:mt-2.5 flex items-center justify-center relative overflow-hidden bg-black"
+            className="min-h-screen pt-25 md:mt-2.5 flex  items-center justify-center relative pb-10 md:pb-20 overflow-hidden bg-black "
             ref={heroRef}
         >
             <div className="flex flex-col-reverse md:grid md:grid-cols-2 gap-16 md:gap-24 items-center max-w-350 mx-auto px-8">
-                <div className=" animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
+                <div className="col-start-2 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
                     <h1 className="text-5xl text-white md:text-7xl lg:text-8xl font-light mb-4 leading-[1.1]">
                         Capturing
                         <br />
@@ -59,7 +59,7 @@ const Hero = () => {
                         View Portfolio
                     </a>
                 </div>
-                <div className="opacity-55 animate-fade-in" style={{ animationDelay: '0.6s' }}>
+                <div className="row-start-1 opacity-55 animate-fade-in" style={{ animationDelay: '0.6s' }}>
                     <img
                         src="/gunjeet_photography/images/image-portrait.png"
                         alt="Photographer Portrait"
